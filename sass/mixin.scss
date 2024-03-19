@@ -1,0 +1,24 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin line {
+  width: 215px;
+  height: 1px;
+  background-color: $--black;
+  margin: 20px 0;
+}
+
+@mixin font-zwl($size, $weight, $lineHeight) {
+  font: {
+    size: $size;
+    weight: $weight;
+  }
+  line-height: $lineHeight;
+}
+
+@mixin style-wh($width, $height) {
+  width: $width;
+  height: $height;
+}
