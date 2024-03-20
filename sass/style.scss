@@ -301,55 +301,6 @@ main {
       }
     }
   }
-  @include mobile {
-    .main-sidebar-mobile {
-      display: block;
-      text-align: right;
-      padding: 15px 15px 15px 0;
-
-      & button {
-        background-color: transparent; /* Xóa màu nền của button */
-        border: none; /* Xóa đường viền của button */
-        padding: 0; /* Loại bỏ padding của button nếu cần */
-      }
-    }
-    .main-content {
-      padding: 0;
-      &-blog {
-        @include style-wh(460px, 635px);
-        margin: 0 10px 60px 10px;
-        &-image > img {
-          @include style-wh(460px, 360px);
-        }
-        &-react {
-          padding: 10px 12px;
-          &-block {
-            margin: 0;
-            &-text {
-              @include font-zwl(15px, 400, 30px);
-            }
-          }
-        }
-        &-content {
-          padding: 0;
-          padding-left: 17px;
-          &-title {
-            @include font-zwl(30px, 700, 35px);
-          }
-          &-description {
-            @include font-zwl(16px, 400, 18.75px);
-          }
-        }
-        &-read-more {
-          @include style-wh(140px, 40px);
-          border: 1px solid #202e33;
-          border-radius: 4px;
-          padding: 15px;
-          margin-left: 17px;
-        }
-      }
-    }
-  }
 }
 
 footer {
