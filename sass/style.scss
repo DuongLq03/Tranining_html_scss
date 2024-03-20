@@ -254,6 +254,10 @@ footer {
   }
 }
 
+.modal {
+  display: none;
+}
+
 @media (max-width: 480px) {
   *,
   *::before,

@@ -258,6 +258,10 @@ footer .footer-text {
   padding-top: 45px;
 }
 
+.modal {
+  display: none;
+}
+
 @media (max-width: 480px) {
   *,
   *::before,
