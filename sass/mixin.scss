@@ -22,3 +22,15 @@
   width: $width;
   height: $height;
 }
+
+@mixin mobile {
+  @media (max-width: #{$--mobile-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$--mobile-width }) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}

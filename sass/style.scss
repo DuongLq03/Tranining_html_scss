@@ -19,19 +19,29 @@
 .header {
   @include flex-center;
   padding: 30px 0;
-
+  @include mobile {
+    padding: 12px 0 12px 0;
+  }
   &-sidebar {
     display: none;
+    @include mobile {
+      display: block;
+      margin-left: 12px;
+    }
   }
 
   &-logo {
     margin: 0 670px 0 150px;
     @include flex-center;
-
+    @include mobile {
+      margin: 0 auto;
+    }
     &-image > img {
       @include style-wh(61px, 61px);
+      @include mobile {
+        @include style-wh(47px, 45px);
+      }
     }
-
     &-text {
       @include font-zwl(20px, 700, 23.5px);
     }
@@ -39,7 +49,9 @@
 
   &-nav {
     @include flex-center;
-
+    @include mobile {
+      display: none;
+    }
     &-button {
       padding: 5px 0;
       margin: 0 20px;
@@ -61,7 +73,9 @@
   &-user {
     @include flex-center;
     margin-left: 115px;
-
+    @include mobile {
+      display: none;
+    }
     &-name {
       @include font-zwl(15px, 500, 17.5px);
       margin-right: 20px;
@@ -73,12 +87,21 @@
   }
 
   &-banner {
+    @include mobile {
+      display: none;
+    }
     &-image > img {
       @include style-wh(1500px, 520px);
     }
 
     &-mobile {
       display: none;
+      @include mobile {
+        display: block;
+        &-image > img {
+          @include style-wh(480px, 100%);
+        }
+      }
     }
   }
 }
@@ -86,11 +109,20 @@
 main {
   display: flex;
   padding: 80px 150px 0 150px;
+  @include mobile {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
 
   .main-sidebar {
     border-right: 1px solid $--black;
     height: 325px;
     margin-right: 60px;
+
+    @include mobile {
+      display: none;
+    }
 
     &-search {
       @include flex-center;
@@ -133,26 +165,51 @@ main {
 
   .main-sidebar-mobile {
     display: none;
+    @include mobile {
+      display: block;
+      text-align: right;
+      padding: 15px 15px 15px 0;
+
+      & button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+      }
+    }
   }
   .main-content {
+    @include mobile {
+      padding: 0;
+    }
     &-blog {
       @include style-wh(925px, 625px);
+      @include mobile {
+        @include style-wh(460px, 635px);
+        margin: 0 10px 60px 10px;
+      }
       margin-bottom: 100px;
       box-shadow: 0px 4px 10px 0px #00000040;
 
       &-image > img {
         @include style-wh(925px, 360px);
+        @include mobile {
+          @include style-wh(460px, 360px);
+        }
       }
 
       &-react {
         @include flex-center;
         padding: 20px 30px;
         color: $--dark-indigo;
-
+        @include mobile {
+          padding: 10px 12px;
+        }
         &-block {
           @include flex-center;
           padding-right: 20px;
-
+          @include mobile {
+            margin: 0;
+          }
           &-icon {
             @include style-wh(23px, 100%);
           }
@@ -160,13 +217,18 @@ main {
           &-text {
             @include font-zwl(18px, 400, 30px);
             padding-left: 5px;
+            @include mobile {
+              @include font-zwl(15px, 400, 30px);
+            }
           }
         }
       }
 
       &-content {
         padding-left: 30px;
-
+        @include mobile {
+          padding-left: 17px;
+        }
         &-title {
           @include font-zwl(30px, 700, 35px);
           padding-bottom: 20px;
@@ -239,89 +301,7 @@ main {
       }
     }
   }
-}
-
-footer {
-  @include style-wh(1500px, 100px);
-  background: $--black;
-
-  .footer-text {
-    @include font-zwl(15px, 500, 21.75px);
-    @include flex-center;
-    justify-content: center;
-    color: $--white;
-    padding-top: 45px;
-  }
-}
-
-.modal {
-  display: none;
-}
-
-@media (max-width: 480px) {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0 solid transparent;
-  }
-
-  .container {
-    max-width: max-content;
-    margin: 0 auto;
-  }
-
-  .header {
-    @include flex-center;
-    padding: 12px 0 12px 0;
-
-    &-sidebar {
-      display: block;
-      margin-left: 12px;
-    }
-
-    &-logo {
-      @include flex-center;
-      margin: 0 auto;
-      &-image > img {
-        @include style-wh(47px, 45px);
-      }
-
-      &-text {
-        @include font-zwl(20px, 700, 28.75px);
-      }
-    }
-
-    &-nav {
-      display: none;
-    }
-
-    &-user {
-      display: none;
-    }
-
-    &-banner {
-      display: none;
-    }
-
-    &-banner-mobile {
-      display: block;
-
-      &-image > img {
-        @include style-wh(480px, 100%);
-      }
-    }
-  }
-
-  main {
-    display: block;
-    margin: 0;
-    padding: 0;
-    .main-sidebar {
-      display: none;
-    }
+  @include mobile {
     .main-sidebar-mobile {
       display: block;
       text-align: right;
@@ -370,15 +350,29 @@ footer {
       }
     }
   }
+}
 
-  footer {
+footer {
+  @include style-wh(1500px, 100px);
+  background: $--black;
+  @include mobile {
     @include style-wh(480px, 100px);
-    .footer-text {
-      @include font-zwl(15px, 500, 21.75px);
-    }
   }
 
-  /* The Modal (background) */
+  .footer-text {
+    @include font-zwl(15px, 500, 21.75px);
+    @include flex-center;
+    justify-content: center;
+    color: $--white;
+    padding-top: 45px;
+  }
+}
+
+.modal {
+  display: none;
+}
+
+@include mobile {
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
