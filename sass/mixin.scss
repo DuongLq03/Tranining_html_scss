@@ -7,7 +7,7 @@
  width: 215px;
  height: 1px;
  background-color: $--black;
- margin: 20px 0;
+ margin-bottom: 15px;
 }
 
 @mixin font-zwl($size, $weight, $lineHeight) {
@@ -22,7 +22,6 @@
  width: $width;
  height: $height;
 }
-
 
 @mixin Responsive($screen) {
  @if $screen == XS {

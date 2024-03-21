@@ -12,9 +12,9 @@
 
 .container {
  max-width: max-content;
- margin: 0 auto;
  font-family: $--text-font;
 }
+
 header {
  @include Responsive(XS and SM) {
   position: fixed;
@@ -27,7 +27,7 @@ header {
 }
 .header {
  @include flex-center;
- padding: 30px 0;
+ margin: 0 10% 0 10%;
 
  @include Responsive(XS and SM) {
   padding: 12px 0 12px 0;
@@ -44,12 +44,7 @@ header {
 
  &-logo {
   @include flex-center;
-  margin: 0 45% 0 10%;
-
-  @include Responsive(MD) {
-   margin: 0 30% 0 10%;
-  }
-
+  margin: 30px 57% 30px 0;
   @include Responsive(XS and SM) {
    margin: 0 auto;
   }
@@ -63,11 +58,13 @@ header {
   }
   &-text {
    @include font-zwl(20px, 700, 23.5px);
+   width: max-content;
   }
  }
 
  &-nav {
   @include flex-center;
+  margin-right: 9.7%;
 
   @include Responsive(XS and SM) {
    display: none;
@@ -75,12 +72,12 @@ header {
 
   &-button {
    padding: 5px 0;
-   margin: 0 20px;
    @include style-wh(51px, 31px);
-   background: $--brown-terra-rossa;
+   background: $--red--brown-terra-rossa;
    text-align: center;
    color: $--white;
    border-radius: 3px;
+   margin-right: 26px;
    p {
     @include font-zwl(15px, 500, 17.5px);
    }
@@ -88,12 +85,12 @@ header {
 
   &-title {
    @include font-zwl(15px, 500, 17.5px);
+   width: max-content;
   }
  }
 
  &-user {
   @include flex-center;
-  margin: 0 5% 0 7%;
 
   @include Responsive(XS and SM) {
    display: none;
@@ -133,7 +130,7 @@ header {
 
 main {
  display: flex;
- padding: 80px 5% 0 5%;
+ padding: 80px 10% 0 10%;
 
  @include Responsive(XS and SM) {
   display: block;
@@ -143,7 +140,7 @@ main {
 
  .main-sidebar {
   border-right: 1px solid $--black;
-  height: 325px;
+  height: 348px;
   margin-right: 5%;
 
   @include Responsive(XS and SM) {
@@ -155,6 +152,7 @@ main {
    border: 1px solid $--black;
    border-radius: 8px;
    padding: 15px;
+   margin-bottom: 15px;
   }
 
   &-search::placeholder {
@@ -187,7 +185,7 @@ main {
     list-style-type: none;
 
     & li {
-     padding-bottom: 10px;
+     padding-bottom: 15px;
     }
    }
 
@@ -198,6 +196,11 @@ main {
    &-label {
     @include font-zwl(16px, 400, 18.75px);
    }
+  }
+
+  &-author-title {
+   @include font-zwl(20px, 700, 23.5px);
+   padding-bottom: 15px;
   }
  }
 
@@ -239,7 +242,7 @@ main {
 
    &-react {
     @include flex-center;
-    padding: 20px 30px;
+    padding: 18px 30px;
     color: $--dark-indigo;
 
     @include Responsive(XS and SM) {
@@ -278,27 +281,29 @@ main {
 
     &-title {
      @include font-zwl(30px, 700, 35px);
-     padding-bottom: 20px;
+     padding-bottom: 15px;
     }
 
     &-description {
      @include font-zwl(16px, 400, 18.75px);
-     padding-bottom: 20px;
+     padding-bottom: 15px;
     }
    }
 
    &-read {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     &-more {
      @include flex-center;
      @include style-wh(140px, 40px);
      border: 1px solid #202e33;
      border-radius: 4px;
-     padding: 15px;
-     margin: 20px 30px 30px;
+     margin-left: 30px;
+     padding-left: 15px;
+     background-color: transparent;
 
      &-text {
       @include font-zwl(14px, 400, 20px);
+      width: max-content;
       color: $--brown-terra-rossa;
      }
 
