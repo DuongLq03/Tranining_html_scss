@@ -30,15 +30,13 @@ header {
  margin: 0 10% 0 10%;
 
  @include Responsive(XS and SM) {
-  padding: 12px 0 12px 0;
+  margin: 0 5% 0 5%;
  }
-
  &-sidebar {
   display: none;
 
   @include Responsive(XS and SM) {
    display: block;
-   margin-left: 12px;
   }
  }
 
@@ -46,7 +44,7 @@ header {
   @include flex-center;
   margin: 30px 57% 30px 0;
   @include Responsive(XS and SM) {
-   margin: 0 auto;
+   margin: 12px 0 12px 20%;
   }
 
   &-image > img {
@@ -120,9 +118,6 @@ header {
 
    @include Responsive(XS and SM) {
     display: block;
-    &-image > img {
-     @include style-wh(100%, 460px);
-    }
    }
   }
  }
@@ -234,10 +229,6 @@ main {
 
    &-image > img {
     @include style-wh(100%, 360px);
-
-    @include Responsive(XS and SM) {
-     @include style-wh(100%, 360px);
-    }
    }
 
    &-react {
@@ -300,6 +291,10 @@ main {
      margin-left: 30px;
      padding-left: 15px;
      background-color: transparent;
+
+     @include Responsive(XS and SM) {
+      margin-left: 15px;
+     }
 
      &-text {
       @include font-zwl(14px, 400, 20px);
@@ -368,6 +363,10 @@ footer {
   justify-content: center;
   color: $--white;
   padding-top: 45px;
+
+  @include Responsive(XS and SM) {
+   @include font-zwl(12px, 500, 21.75px);
+  }
  }
 }
 
