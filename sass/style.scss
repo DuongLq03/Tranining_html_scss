@@ -15,7 +15,16 @@
  margin: 0 auto;
  font-family: $--text-font;
 }
-
+header {
+ @include Responsive(XS and SM) {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: $--white;
+  z-index: 2;
+ }
+}
 .header {
  @include flex-center;
  padding: 30px 0;
@@ -155,6 +164,9 @@ main {
 
   &-search-icon {
    position: absolute;
+   background-color: transparent;
+   border: none;
+   padding: 0;
    margin-top: 9px;
    margin-left: 170px;
    margin: 9px 0 0 170px;
@@ -368,12 +380,11 @@ footer {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #00000099;
   -webkit-animation-name: fadeIn;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.5s;
   animation-name: fadeIn;
-  animation-duration: 0.4s;
+  animation-duration: 0.5s;
 
   &-title {
    @include font-zwl(18px, 700, 23.5px);
@@ -401,7 +412,6 @@ footer {
    margin-left: 10%;
    &-title {
     @include font-zwl(18px, 700, 23.5px);
-    margin-top: 10px;
    }
    &-search {
     @include flex-center;
@@ -415,13 +425,16 @@ footer {
    .modal-body-search-icon {
     position: absolute;
     margin: 17px 0 0 70%;
+    background-color: transparent;
+    border: none;
+    padding: 0;
    }
    .modal-body-search::placeholder {
     @include font-zwl(15px, 400, 18.75px);
     color: $--black;
    }
    &-category {
-    margin-top: 30px;
+    margin-top: 20px;
     &-title {
      @include font-zwl(18px, 700, 23.5px);
     }
@@ -435,6 +448,9 @@ footer {
        @include font-zwl(15px, 400, 18.75px);
        flex-basis: 50%;
        margin-bottom: 10px;
+       & input {
+        @include style-wh(15px, 15px);
+       }
       }
      }
      &-label {
