@@ -10,6 +10,7 @@
 
 .container {
   max-width: max-content;
+  margin: 0 auto;
   font-family: "roboto", sans-serif;
 }
 
@@ -27,11 +28,12 @@
 .header {
   display: flex;
   align-items: center;
-  margin: 0 10% 0 10%;
+  width: 100%;
+  padding: 30px 10% 30px 10%;
 }
 @media only screen and (max-width: 768px) {
   .header {
-    margin: 0 5% 0 5%;
+    padding: 12px 0 12px 0;
   }
 }
 .header-sidebar {
@@ -40,16 +42,17 @@
 @media only screen and (max-width: 768px) {
   .header-sidebar {
     display: block;
+    margin-left: 12px;
   }
 }
 .header-logo {
   display: flex;
   align-items: center;
-  margin: 30px 57% 30px 0;
+  margin-right: 60%;
 }
 @media only screen and (max-width: 768px) {
   .header-logo {
-    margin: 12px 0 12px 20%;
+    margin-left: 25%;
   }
 }
 .header-logo-image > img {
@@ -66,12 +69,15 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 23.5px;
-  width: max-content;
+}
+@media only screen and (max-width: 768px) {
+  .header-logo-text {
+    width: max-content;
+  }
 }
 .header-nav {
   display: flex;
   align-items: center;
-  margin-right: 9.7%;
 }
 @media only screen and (max-width: 768px) {
   .header-nav {
@@ -86,7 +92,6 @@
   text-align: center;
   color: #fff;
   border-radius: 3px;
-  margin-right: 26px;
 }
 .header-nav-button p {
   font-size: 15px;
@@ -97,11 +102,12 @@
   font-size: 15px;
   font-weight: 500;
   line-height: 17.5px;
-  width: max-content;
+  margin-left: 25px;
 }
 .header-user {
   display: flex;
   align-items: center;
+  margin-left: 7%;
 }
 @media only screen and (max-width: 768px) {
   .header-user {
@@ -112,11 +118,11 @@
   font-size: 15px;
   font-weight: 500;
   line-height: 17.5px;
-  margin-right: 20px;
 }
 .header-user-icon {
   width: 28px;
   height: 28px;
+  margin-left: 10px;
 }
 @media only screen and (max-width: 768px) {
   .header-banner {
@@ -125,7 +131,7 @@
 }
 .header-banner-image > img {
   width: 100%;
-  height: 520px;
+  height: 100%;
 }
 .header-banner-mobile {
   display: none;
@@ -133,6 +139,10 @@
 @media only screen and (max-width: 768px) {
   .header-banner-mobile {
     display: block;
+  }
+  .header-banner-mobile-image > img {
+    width: 100%;
+    height: 460px;
   }
 }
 
@@ -149,7 +159,7 @@ main {
 }
 main .main-sidebar {
   border-right: 1px solid #000;
-  height: 348px;
+  height: 341px;
   margin-right: 5%;
 }
 @media only screen and (max-width: 768px) {
@@ -173,12 +183,11 @@ main .main-sidebar-search::placeholder {
 }
 main .main-sidebar-search-icon {
   position: absolute;
-  background-color: transparent;
-  border: none;
-  padding: 0;
   margin-top: 9px;
   margin-left: 170px;
   margin: 9px 0 0 170px;
+  background-color: transparent;
+  border: none;
 }
 main .main-sidebar-line {
   width: 215px;
@@ -190,10 +199,10 @@ main .main-sidebar-category-title {
   font-size: 20px;
   font-weight: 700;
   line-height: 23.5px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 }
 main .main-sidebar-category-list ul {
-  padding-left: 20px;
+  padding-left: 15px;
   list-style-type: none;
 }
 main .main-sidebar-category-list ul li {
@@ -247,6 +256,12 @@ main .main-content-blog-image > img {
   width: 100%;
   height: 360px;
 }
+@media only screen and (max-width: 768px) {
+  main .main-content-blog-image > img {
+    width: 100%;
+    height: 360px;
+  }
+}
 main .main-content-blog-react {
   display: flex;
   align-items: center;
@@ -261,7 +276,7 @@ main .main-content-blog-react {
 main .main-content-blog-react-block {
   display: flex;
   align-items: center;
-  padding-right: 20px;
+  padding-right: 15px;
 }
 @media only screen and (max-width: 768px) {
   main .main-content-blog-react-block {
@@ -316,19 +331,18 @@ main .main-content-blog-read-more {
   border: 1px solid #202e33;
   border-radius: 4px;
   margin-left: 30px;
-  padding-left: 15px;
+  padding-left: 10px;
   background-color: transparent;
 }
 @media only screen and (max-width: 768px) {
   main .main-content-blog-read-more {
-    margin-left: 15px;
+    margin-left: 17px;
   }
 }
 main .main-content-blog-read-more-text {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
-  width: max-content;
   color: #c40000;
 }
 main .main-content-blog-read-more-icon > img {
@@ -391,13 +405,6 @@ footer .footer-text {
   justify-content: center;
   color: #fff;
   padding-top: 45px;
-}
-@media only screen and (max-width: 768px) {
-  footer .footer-text {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 21.75px;
-  }
 }
 
 .modal {
@@ -465,9 +472,6 @@ footer .footer-text {
   .modal-body .modal-body-search-icon {
     position: absolute;
     margin: 17px 0 0 70%;
-    background-color: transparent;
-    border: none;
-    padding: 0;
   }
   .modal-body .modal-body-search::placeholder {
     font-size: 15px;

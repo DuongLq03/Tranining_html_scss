@@ -12,9 +12,9 @@
 
 .container {
  max-width: max-content;
+ margin: 0 auto;
  font-family: $--text-font;
 }
-
 header {
  @include Responsive(XS and SM) {
   position: fixed;
@@ -27,24 +27,27 @@ header {
 }
 .header {
  @include flex-center;
- margin: 0 10% 0 10%;
-
+ width: 100%;
+ padding: 30px 10% 30px 10%;
  @include Responsive(XS and SM) {
-  margin: 0 5% 0 5%;
+  padding: 12px 0 12px 0;
  }
+
  &-sidebar {
   display: none;
 
   @include Responsive(XS and SM) {
    display: block;
+   margin-left: 12px;
   }
  }
 
  &-logo {
   @include flex-center;
-  margin: 30px 57% 30px 0;
+  margin-right: 60%;
+
   @include Responsive(XS and SM) {
-   margin: 12px 0 12px 20%;
+   margin-left: 25%;
   }
 
   &-image > img {
@@ -56,13 +59,14 @@ header {
   }
   &-text {
    @include font-zwl(20px, 700, 23.5px);
-   width: max-content;
+   @include Responsive(XS and SM) {
+    width: max-content;
+   }
   }
  }
 
  &-nav {
   @include flex-center;
-  margin-right: 9.7%;
 
   @include Responsive(XS and SM) {
    display: none;
@@ -75,7 +79,7 @@ header {
    text-align: center;
    color: $--white;
    border-radius: 3px;
-   margin-right: 26px;
+
    p {
     @include font-zwl(15px, 500, 17.5px);
    }
@@ -83,24 +87,24 @@ header {
 
   &-title {
    @include font-zwl(15px, 500, 17.5px);
-   width: max-content;
+   margin-left: 25px;
   }
  }
 
  &-user {
   @include flex-center;
-
+  margin-left: 7%;
   @include Responsive(XS and SM) {
    display: none;
   }
 
   &-name {
    @include font-zwl(15px, 500, 17.5px);
-   margin-right: 20px;
   }
 
   &-icon {
    @include style-wh(28px, 28px);
+   margin-left: 10px;
   }
  }
 
@@ -110,7 +114,7 @@ header {
   }
 
   &-image > img {
-   @include style-wh(100%, 520px);
+   @include style-wh(100%, 100%);
   }
 
   &-mobile {
@@ -118,6 +122,9 @@ header {
 
    @include Responsive(XS and SM) {
     display: block;
+    &-image > img {
+     @include style-wh(100%, 460px);
+    }
    }
   }
  }
@@ -135,7 +142,7 @@ main {
 
  .main-sidebar {
   border-right: 1px solid $--black;
-  height: 348px;
+  height: 341px;
   margin-right: 5%;
 
   @include Responsive(XS and SM) {
@@ -157,12 +164,12 @@ main {
 
   &-search-icon {
    position: absolute;
-   background-color: transparent;
-   border: none;
-   padding: 0;
+
    margin-top: 9px;
    margin-left: 170px;
    margin: 9px 0 0 170px;
+   background-color: transparent;
+   border: none;
   }
 
   &-line {
@@ -172,11 +179,11 @@ main {
   &-category {
    &-title {
     @include font-zwl(20px, 700, 23.5px);
-    padding-bottom: 20px;
+    padding-bottom: 15px;
    }
 
    &-list ul {
-    padding-left: 20px;
+    padding-left: 15px;
     list-style-type: none;
 
     & li {
@@ -192,7 +199,6 @@ main {
     @include font-zwl(16px, 400, 18.75px);
    }
   }
-
   &-author-title {
    @include font-zwl(20px, 700, 23.5px);
    padding-bottom: 15px;
@@ -229,6 +235,10 @@ main {
 
    &-image > img {
     @include style-wh(100%, 360px);
+
+    @include Responsive(XS and SM) {
+     @include style-wh(100%, 360px);
+    }
    }
 
    &-react {
@@ -242,7 +252,7 @@ main {
 
     &-block {
      @include flex-center;
-     padding-right: 20px;
+     padding-right: 15px;
 
      @include Responsive(XS and SM) {
       margin: 0;
@@ -289,16 +299,14 @@ main {
      border: 1px solid #202e33;
      border-radius: 4px;
      margin-left: 30px;
-     padding-left: 15px;
+     padding-left: 10px;
      background-color: transparent;
 
      @include Responsive(XS and SM) {
-      margin-left: 15px;
+      margin-left: 17px;
      }
-
      &-text {
       @include font-zwl(14px, 400, 20px);
-      width: max-content;
       color: $--brown-terra-rossa;
      }
 
@@ -363,10 +371,6 @@ footer {
   justify-content: center;
   color: $--white;
   padding-top: 45px;
-
-  @include Responsive(XS and SM) {
-   @include font-zwl(12px, 500, 21.75px);
-  }
  }
 }
 
@@ -429,9 +433,6 @@ footer {
    .modal-body-search-icon {
     position: absolute;
     margin: 17px 0 0 70%;
-    background-color: transparent;
-    border: none;
-    padding: 0;
    }
    .modal-body-search::placeholder {
     @include font-zwl(15px, 400, 18.75px);
