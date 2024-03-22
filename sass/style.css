@@ -367,14 +367,19 @@ main .main-content-blog-read-more-text {
 main .main-content-blog-read-more-icon > img {
   width: 18px;
   height: 8px;
-  margin: 0 0 1px 23px;
+  margin-left: 15px;
 }
 main .main-content-pagination {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding-bottom: 75px;
+  padding-bottom: 144px;
+}
+@media only screen and (max-width: 768px) {
+  main .main-content-pagination {
+    padding-bottom: 100px;
+  }
 }
 main .main-content-pagination-prev, main .main-content-pagination-next {
   width: 40px;
@@ -491,6 +496,8 @@ footer .footer-text {
   .modal-body .modal-body-search-icon {
     position: absolute;
     margin: 17px 0 0 70%;
+    background-color: transparent;
+    border: none;
   }
   .modal-body .modal-body-search::placeholder {
     font-size: 15px;
