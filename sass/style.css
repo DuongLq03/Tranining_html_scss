@@ -373,8 +373,8 @@ main .main-content-pagination {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   padding-bottom: 144px;
+  gap: 10px;
 }
 @media only screen and (max-width: 768px) {
   main .main-content-pagination {
@@ -399,7 +399,7 @@ main .main-content-pagination-pages ul li {
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
-  padding: 10px;
+  padding: 0 15px 0 15px;
 }
 main .main-content-pagination-pages ul .active {
   width: 32px;
