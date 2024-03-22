@@ -27,7 +27,8 @@ header {
 }
 .header {
  @include flex-center;
- width: 100%;
+ max-width: 100%;
+ justify-content: space-between;
  padding: 30px 10% 30px 10%;
  @include Responsive(XS and SM) {
   padding: 12px 0 12px 0;
@@ -44,7 +45,6 @@ header {
 
  &-logo {
   @include flex-center;
-  margin-right: 60%;
 
   @include Responsive(XS and SM) {
    margin-left: 25%;
@@ -65,9 +65,12 @@ header {
   }
  }
 
+ &-nav-user {
+  @include flex-center;
+ }
  &-nav {
   @include flex-center;
-
+  margin-right: 90px;
   @include Responsive(XS and SM) {
    display: none;
   }
@@ -88,12 +91,12 @@ header {
   &-title {
    @include font-zwl(15px, 500, 17.5px);
    margin-left: 25px;
+   width: max-content;
   }
  }
 
  &-user {
   @include flex-center;
-  margin-left: 7%;
   @include Responsive(XS and SM) {
    display: none;
   }
@@ -202,6 +205,17 @@ main {
   &-author-title {
    @include font-zwl(20px, 700, 23.5px);
    padding-bottom: 15px;
+  }
+  &-search-author {
+   @include style-wh(200px, 40px);
+   border: 1px solid $--black;
+   border-radius: 8px;
+   padding: 15px;
+  }
+
+  &-search-author::placeholder {
+   @include font-zwl(15px, 400, 18.75px);
+   color: $--black;
   }
  }
 
