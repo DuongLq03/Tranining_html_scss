@@ -46,8 +46,10 @@ header {
 
  &-logo {
   @include flex-center;
-  margin: auto;
 
+  @include Responsive(XS and SM) {
+   margin: auto;
+  }
   &-image > img {
    @include style-wh(61px, 61px);
 
@@ -311,7 +313,7 @@ main {
      border: 1px solid #202e33;
      border-radius: 4px;
      margin-left: 30px;
-     padding-left: 10px;
+     padding-left: 15px;
      background-color: transparent;
 
      @include Responsive(XS and SM) {
