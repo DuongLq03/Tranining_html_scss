@@ -1,0 +1,44 @@
+@mixin flex-center {
+ display: flex;
+ align-items: center;
+}
+
+@mixin line {
+ width: 215px;
+ height: 1px;
+ background-color: $--black;
+ margin-bottom: 15px;
+}
+
+@mixin font-zwl($size, $weight, $lineHeight) {
+ font: {
+  size: $size;
+  weight: $weight;
+ }
+ line-height: $lineHeight;
+}
+
+@mixin style-wh($width, $height) {
+ width: $width;
+ height: $height;
+}
+
+@mixin Responsive($screen) {
+ @if $screen == XS {
+  @media only screen and (max-width: $XS) {
+   @content;
+  }
+ } @else if $screen == SM {
+  @media only screen and (max-width: $SM) {
+   @content;
+  }
+ } @else if $screen == MD {
+  @media only screen and (max-width: $MD) {
+   @content;
+  }
+ } @else if $screen == XL {
+  @media only screen and (max-width: $XL) {
+   @content;
+  }
+ }
+}
