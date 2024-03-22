@@ -39,16 +39,14 @@ header {
 
   @include Responsive(XS and SM) {
    display: block;
+   position: absolute;
    margin-left: 12px;
   }
  }
 
  &-logo {
   @include flex-center;
-
-  @include Responsive(XS and SM) {
-   margin-left: 25%;
-  }
+  margin: auto;
 
   &-image > img {
    @include style-wh(61px, 61px);
